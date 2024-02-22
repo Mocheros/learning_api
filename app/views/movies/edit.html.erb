@@ -1,0 +1,20 @@
+<h1>Edytuj film</h1>
+
+<%= form_for :movie, url: movie_path(@movie), method: :patch do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, value: @movie['title'] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description, value: @movie['description'] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :published %>
+    <%= f.check_box :published, checked: @movie['published'] %>
+  </div>
+
+  <%= f.submit "Zapisz zmiany" %>
+<% end %>

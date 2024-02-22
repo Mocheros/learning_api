@@ -1,0 +1,15 @@
+<h1>Dodaj film</h1>
+
+<%= form_tag "/movies", method: :post do %>
+  <label for="title">Tytuł: </label>
+  <%= text_field_tag "movie[title]" %>
+  <br>
+  <label for="description">Opis: </label>
+  <%= text_field_tag "movie[description]" %>
+  <br>
+  <label for="published">Opublikowany: </label>
+  <%= hidden_field_tag "movie[published]" , false %>
+  <%= check_box_tag "movie[published]" , true, true %>
+  <br>
+  <%= submit_tag "Dodaj film" %>
+<% end %>
